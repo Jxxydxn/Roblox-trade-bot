@@ -16,7 +16,7 @@ example output:
 
 ```
 ----Roblox trade bot----
-   Made By: iranathan
+   Made By: Jayy#3223
 
 
 Found 3 trades...
