@@ -1,3 +1,0 @@
-settings = {
-    "cookie": "Cookie here",
-}
